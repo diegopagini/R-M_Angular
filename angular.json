@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "RyM"
+    }
+  },
+  "defaultProject": "RyM",
+  "cli": {
+    "analytics": "42331208-1460-4137-ab06-c18c61ae8fc6"
+  }
 }

@@ -1,0 +1,29 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.navigation-container {
+  grid-column: 1;
+  .navigation li {
+    font-size: 2rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.made-by {
+  grid-column: 2;
+  p {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
