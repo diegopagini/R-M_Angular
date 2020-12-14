@@ -1,4 +1,8 @@
 export interface Character {
+  results: Array<CharacterData>;
+}
+
+export interface CharacterData {
   id: number;
   name: string;
   status: string;
