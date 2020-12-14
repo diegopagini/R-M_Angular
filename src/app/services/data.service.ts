@@ -7,7 +7,7 @@ import { Character } from '../interfaces/character';
   providedIn: 'root',
 })
 export class DataService {
-  URL: `https://rickandmortyapi.com/api/character/`;
+  URL: 'https://rickandmortyapi.com/api/character/';
   constructor(private http: HttpClient) {}
 
   getData(): Observable<Character> {

@@ -8,7 +8,7 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./characters.component.scss'],
 })
 export class CharactersComponent implements OnInit {
-  characters: Array<CharacterData>;
+  characters: Array<CharacterData> = [];
   constructor(private charactersService: DataService) {}
 
   ngOnInit(): void {
@@ -18,7 +18,7 @@ export class CharactersComponent implements OnInit {
   getCharacters() {
     this.charactersService.getData().subscribe((response: Character) => {
       this.characters = response.results;
-      console.log(response);
+      console.log(response.results);
     });
   }
 }
