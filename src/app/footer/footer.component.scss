@@ -6,20 +6,21 @@
 .navigation-container {
   grid-column: 1;
   .navigation li {
-    font-size: 2rem;
+    font-size: 1.8rem;
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    text-decoration: underline;
   }
 }
 
 .made-by {
   grid-column: 2;
   p {
-    font-size: 2rem;
+    font-size: 1.8rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,0 +1,25 @@
+.list-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list {
+  list-style: none;
+  margin: 0 auto;
+  .card {
+    width: 300px;
+    height: auto;
+  }
+}
+
+.card-body {
+  .card-title {
+    font-size: 2.6rem;
+  }
+  .btn {
+    font-size: 2rem;
+  }
+}

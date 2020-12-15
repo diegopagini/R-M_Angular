@@ -1,7 +1,24 @@
 <section>
   <div>
-    <ul *ngIf="characters">
-      <li *ngFor="let character of characters">{{ character.name }}</li>
+    <ul class="list-container" *ngIf="characters">
+      <li class="list" *ngFor="let character of characters">
+        <div class="card">
+          <img
+            src="{{ character.image }}"
+            class="card-img-top"
+            alt="{{ character.name }}"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ character.name }}</h5>
+            <a
+              routerLink="/characters/{{ character.id }}"
+              routerLinkActive="active"
+              class="btn btn-primary"
+              >Ver más</a
+            >
+          </div>
+        </div>
+      </li>
     </ul>
   </div>
 </section>
