@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Console } from 'console';
 import { Observable } from 'rxjs';
 import { Character } from '../interfaces/character';
 
