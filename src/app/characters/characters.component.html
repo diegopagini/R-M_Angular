@@ -1,9 +1,7 @@
 <section>
   <div>
-    <ul>
-      <li *ngFor="let character of characters">
-        {{ character.espisode }}
-      </li>
+    <ul *ngIf="characters">
+      <li *ngFor="let character of characters">{{ character.name }}</li>
     </ul>
   </div>
 </section>

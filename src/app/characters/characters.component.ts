@@ -9,16 +9,18 @@ import { DataService } from '../services/data.service';
 })
 export class CharactersComponent implements OnInit {
   characters: Array<CharacterData> = [];
+
   constructor(private charactersService: DataService) {}
 
   ngOnInit(): void {
-    this.getCharacters();
+    this.getCharacter();
   }
 
-  getCharacters() {
-    this.charactersService.getData().subscribe((response: Character) => {
-      this.characters = response.results;
-      console.log(response.results);
-    });
+  async getCharacter() {
+    const response = await fetch(`https://rickandmortyapi.com/api/character/`);
+    const data = await response.json();
+    console.log(data);
+    this.characters = data.results;
+    return data;
   }
 }
