@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-character-card',
@@ -8,9 +9,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CharacterCardComponent implements OnInit {
   idCharacter;
-  constructor(private activeRoute: ActivatedRoute) {}
-
-  ngOnInit(): void {
-    this.idCharacter = this.activeRoute.snapshot.params.id;
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private dataService: DataService
+  ) {
+    this.activeRoute.params.subscribe((params) => {
+      this.idCharacter = this.dataService.getDetails(params['id']);
+      console.log(this.idCharacter);
+    });
   }
+
+  ngOnInit(): void {}
 }

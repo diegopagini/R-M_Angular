@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CharacterData, Character } from '../interfaces/character';
 import { DataService } from '../services/data.service';
 
@@ -10,7 +11,7 @@ import { DataService } from '../services/data.service';
 export class CharactersComponent implements OnInit {
   characters: Array<CharacterData> = [];
 
-  constructor(private charactersService: DataService) {}
+  constructor(private charactersService: DataService, private router: Router) {}
 
   ngOnInit(): void {
     this.getCharacter();
@@ -22,5 +23,9 @@ export class CharactersComponent implements OnInit {
     console.log(data);
     this.characters = data.results;
     return data;
+  }
+
+  verMas(i) {
+    this.router.navigate(['characters', i]);
   }
 }

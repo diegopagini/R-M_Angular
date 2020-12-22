@@ -1,7 +1,7 @@
 <section>
   <div>
     <ul class="list-container" *ngIf="characters">
-      <li class="list" *ngFor="let character of characters">
+      <li class="list" *ngFor="let character of characters; let i = index">
         <div class="card">
           <img
             src="{{ character.image }}"
@@ -10,12 +10,7 @@
           />
           <div class="card-body">
             <h5 class="card-title">{{ character.name }}</h5>
-            <a
-              routerLink="/characters/{{ character.id }}"
-              routerLinkActive="active"
-              class="btn btn-primary"
-              >Ver más</a
-            >
+            <button (click)="verMas(i)" class="btn btn-primary">Ver más</button>
           </div>
         </div>
       </li>

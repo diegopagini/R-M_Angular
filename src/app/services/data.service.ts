@@ -8,14 +8,14 @@ import { Character } from '../interfaces/character';
 })
 export class DataService {
   URL: 'https://rickandmortyapi.com/api/character/';
-
+  characters: any[] = [];
   constructor(private http: HttpClient) {}
 
   async getCharacter() {
     const response = await fetch(`https://rickandmortyapi.com/api/character/`);
     const data = await response.json();
     console.log(data);
-    return data.results;
+    return (data.results = this.characters);
   }
 
   searchCharacters(query = '', page = 1) {
