@@ -10,7 +10,12 @@
           />
           <div class="card-body">
             <h5 class="card-title">{{ character.name }}</h5>
-            <button (click)="verMas(i)" class="btn btn-primary">Ver más</button>
+            <button
+              [routerLink]="['/characters/', character.id]"
+              class="btn btn-primary"
+            >
+              Ver más
+            </button>
           </div>
         </div>
       </li>

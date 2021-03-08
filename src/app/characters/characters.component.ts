@@ -20,12 +20,7 @@ export class CharactersComponent implements OnInit {
   async getCharacter() {
     const response = await fetch(`https://rickandmortyapi.com/api/character/`);
     const data = await response.json();
-    console.log(data);
     this.characters = data.results;
     return data;
-  }
-
-  verMas(i) {
-    this.router.navigate(['characters', i]);
   }
 }

@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CharactersComponent } from './characters/characters.component';
 import { CharacterCardComponent } from './character-card/character-card.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     CharacterCardComponent,
     PageNotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })

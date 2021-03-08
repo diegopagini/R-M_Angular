@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -10,13 +11,20 @@ import { DataService } from '../services/data.service';
 export class CharacterCardComponent implements OnInit {
   idCharacter;
   constructor(
-    private activeRoute: ActivatedRoute,
-    private dataService: DataService
+    private route: ActivatedRoute,
+    private dataService: DataService,
+    private http: HttpClient,
+    private router: Router
   ) {
-    this.activeRoute.params.subscribe((params) => {
-      this.idCharacter = this.dataService.getDetails(params['id']);
-      console.log(this.idCharacter);
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log(id);
+
+    this.http
+      .get(`https://rickandmortyapi.com/api/character/${id}`)
+      .subscribe((data) => {
+        console.log(data);
+        this.idCharacter = data;
+      });
   }
 
   ngOnInit(): void {}

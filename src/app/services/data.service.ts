@@ -7,7 +7,7 @@ import { Character } from '../interfaces/character';
   providedIn: 'root',
 })
 export class DataService {
-  URL: 'https://rickandmortyapi.com/api/character/';
+  URL: 'https://rickandmortyapi.com/api/character';
   characters: any[] = [];
   constructor(private http: HttpClient) {}
 
@@ -23,7 +23,7 @@ export class DataService {
     return this.http.get<Character[]>(filter);
   }
 
-  getDetails(id: number) {
+  getDetails(id: any) {
     return this.http.get<Character>(`${this.URL}/${id}`);
   }
 }
