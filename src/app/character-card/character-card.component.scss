@@ -1,0 +1,36 @@
+.character {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &-img {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &-info {
+    list-style: none;
+    width: 100%;
+    max-width: 500px;
+    padding: 0 1rem;
+    li {
+      font-size: 3rem;
+    }
+    p {
+      margin-top: 1rem;
+      width: 100%;
+      font-size: 2.5rem;
+      text-decoration: underline;
+    }
+
+    .more {
+      padding-left: 0;
+
+      li {
+        font-size: 2rem;
+      }
+    }
+  }
+}

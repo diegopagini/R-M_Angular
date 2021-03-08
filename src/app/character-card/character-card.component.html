@@ -1,2 +1,22 @@
-{{ idCharacter.name }}
-{{ idCharacter.status }}
+<ng-container *ngIf="idCharacter">
+  <div class="character">
+    <img
+      [src]="idCharacter.image"
+      class="character-img"
+      [alt]="idCharacter.name"
+    />
+
+    <ul class="character-info">
+      <li>Nombre: {{ idCharacter.name }}</li>
+      <li>Estado: {{ idCharacter.status }}</li>
+      <li>Genero: {{ idCharacter.gender }}</li>
+      <li>Locación: {{ idCharacter.location.name }}</li>
+      <li>Especie: {{ idCharacter.species }}</li>
+      <li>Creado: {{ idCharacter.created | date }}</li>
+      <p *ngIf="idCharacter.episode">Lista de episodios donde aparece:</p>
+      <ul *ngFor="let espisodio of idCharacter.episode" class="more">
+        <li>{{ espisodio }}</li>
+      </ul>
+    </ul>
+  </div>
+</ng-container>
